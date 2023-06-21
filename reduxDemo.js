@@ -1,13 +1,12 @@
 const redux = require("redux")
 
 const reducerFunction = (state = {counter: 0}, action) => {
-    let counter;
     if ( action.type === "increament" ) {
-       counter = {counter: state.counter + 1}
-    } else if ( action.type === "decreament" ) {
-       counter =  {counter: state.counter - 1}
-    } 
-    return counter   
+        return{counter: state.counter + 1}
+     } else if ( action.type === "decreament" ) {
+        return {counter: state.counter - 1}
+     } 
+     return state
 }
 
 const store = redux.createStore(reducerFunction)
